@@ -1,7 +1,7 @@
 <template>
   <div>
     <input type="file" ref="upload" accept=".xls,.xlsx" class="outputlist_upload">
-    <div style="display: flex;width: 300px; margin-left: auto; margin-right: auto; background-color: #409eff;">
+    <div style="display: flex;width: 300px;margin-top: 30px; margin-left: auto; margin-right: auto; background-color: #409eff;">
       <div style="color: white">数值</div>
       <div style="margin-left: 180px;color: white">数量</div>
     </div>
