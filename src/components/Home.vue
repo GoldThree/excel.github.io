@@ -72,6 +72,8 @@
             let count = valueNumber[key]
             let rate = count/this.allNumber
             var sheetData = {
+              empty1: '',
+              empty2: '',
               testData: key,
               count: count,
               all: this.allNumber,
@@ -91,8 +93,8 @@
         var that = this;
         require.ensure([], () => {
           const { export_json_to_excel } = require('@/excel/export2Excel'); //这里必须使用绝对路径，使用@/+存放export2Excel的路径
-          const tHeader = ['数值（x）','数量','样本总数','频率f(x)','xf(x)']; // 导出的表头名信息
-          const filterVal = ['testData','count', 'all', 'rate','f']; // 导出的表头字段名，需要导出表格字段名
+          const tHeader = ['','', '数值（x）','数量','样本总数','频率f(x)','xf(x)']; // 导出的表头名信息
+          const filterVal = ['empty1','empty2','testData','count', 'all', 'rate','f']; // 导出的表头字段名，需要导出表格字段名
           const list = that.excelData;
           const data = that.formatJson(filterVal, list);
 
