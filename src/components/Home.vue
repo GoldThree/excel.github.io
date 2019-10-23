@@ -67,10 +67,13 @@
             }
           }
           that.outputs = [];//清空接收数据
+          let tempSum = 0
           for (var key in valueNumber) {
 
             let count = valueNumber[key]
             let rate = count/this.allNumber
+            let fx = key * rate
+            tempSum += fx
             var sheetData = {
               empty1: '',
               empty2: '',
@@ -82,6 +85,15 @@
             }
             that.outputs.push(sheetData);
           }
+          that.outputs.push({
+            empty1: '',
+            empty2: '',
+            testData: '',
+            count: '',
+            all: '',
+            rate: '',
+            f: this.roundFun(tempSum, 3)
+          })
           that.selectData = that.outputs
           that.excelData = that.outputs
           console.log('result---------->', that.outputs)
@@ -116,6 +128,9 @@
       },
       formatJson(filterVal, jsonData) {
         return jsonData.map(v => filterVal.map(j => v[j]))
+      },
+      roundFun(value, n) {
+        return Math.round(value*Math.pow(10,n))/Math.pow(10,n);
       },
   }
   }
