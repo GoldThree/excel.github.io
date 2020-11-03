@@ -11,6 +11,7 @@ COPY . .
 # 构建项目
 RUN npm run build
 
+
 # 生产阶段(用nginx简洁版镜像)
 from nginx:1.13.12-alpine as production-stage
 # 直接复制构建阶段生成在dist的代码到nginx的html目录下
